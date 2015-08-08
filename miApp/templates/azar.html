@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+
+<title>Azar De Imagenes</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/imagenes.png' %}">
+{% endblock %}
+
+{% block content %}
+
+<div id="barra">
+    <p align="center">
+        <progress id="labarra" max="100" value="0">
+    </p>
+</div>
+
+<div id="imagen">
+    <p align="center">
+        <img src="{% static 'img/Azar/412054.jpg' %}" style="width: 800px; height: 600px; ">
+    </p>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript">
+setInterval(writeImg, 50);
+
+    var progressValue =0;
+
+    function writeImg(){
+
+        if (progressValue>100){
+            var azarEx = [];
+            var NumImages = 6; 
+            var random = Math.random(); 
+            var rand = Math.round( (NumImages-1) * random); 
+
+            imagenes = new Array;
+            imagenes[0] = "{% static 'img/Azar/98546.jpg' %}";
+            imagenes[1] = "{% static 'img/Azar/394749.jpg' %}";
+            imagenes[2] = "{% static 'img/Azar/410316.jpg' %}";
+            imagenes[3] = "{% static 'img/Azar/412054.jpg' %}";
+            imagenes[4] = "{% static 'img/Azar/433299.jpg' %}";
+            imagenes[5] = "{% static 'img/Azar/457148.jpg' %}";
+
+            var azar = imagenes[rand];
+
+
+            if (azar!=azarEx){
+                document.getElementById("imagen").innerHTML= '<p align="center"><img src="'+ azar +' " style="width: 800px; height: 600px; "></p>';
+                azarEx = imagenes[rand];
+            }
+            progressValue = 0;
+
+        }else{
+            progressValue = progressValue  + 1;
+        }
+        progress = document.getElementById("labarra");
+        progress.value = progressValue;
+    }
+
+</script>
+{% endblock %}

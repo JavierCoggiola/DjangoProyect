@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+
+<link href="{% static 'css/jquery-ui-1.11.4.custom/jquery-ui.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/jquery-ui-1.11.4.custom/jquery-ui.theme.css' %}" rel="stylesheet"/>
+<title>Cronómetro</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/cronometro.png' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="clock">
+
+    <ul id="horas">
+        <li id="hours"><span id="stopwatch">00:00:00</span> </li>
+    </ul>
+    
+    <form name="form" class="form">
+        <p>
+            <input id='botonPlay' type='button' value='Pausar' onclick='Example1.Timer.toggle(); resetear();' />
+            <input type='button' value='Vuelta' onclick='giveVuelta();' />
+            <input type='button' value='Resetear' onclick='Example1.resetStopwatch(); borrar();' />
+        </p>
+    </form>
+    
+    <div id="capa" align=center>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/crono.js' %}"></script>
+<script type="text/javascript" src="{% static 'res/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.timer.js' %}"></script>
+<script type="text/javascript" src="{% static 'res/demo.js' %}"></script>
+
+{% endblock %}

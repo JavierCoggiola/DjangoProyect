@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<title>Trata de responder el cuestionario</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/cuestionario.png' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="fondoTrans">
+        <form name="form" class="form">
+            <FORM name="formul">
+                <h2><b>¿Color favorito?</b></h2><BR><BR>
+                <INPUT class="view" NAME="nombre" TYPE="text" ID="View" SIZE="40" value=""/><BR><BR>
+                <INPUT TYPE="button" ID="Boton" VALUE="Enviar" onmouseover="CambiaPosicion()" style=cursor:pointer;>
+                    <input name="Reset" type="reset" id="Reset" value="Borrar">
+            </FORM>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/cuest.js' %}"></script>
+{% endblock %}

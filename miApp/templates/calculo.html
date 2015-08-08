@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<title>Calculadora</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/calculadora.png' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<form name="form" class="calc">
+
+            <input class="view" id="operaciones" type="text" value="" readonly/>
+            <br>
+            <section>
+
+                <div class="numbers">
+                    <input type="button" class="buttons" id="btn1" onclick="ejecutar(this)" value="1" />
+                    <input type="button" class="buttons" id="btn2" onclick="ejecutar(this)" value="2" />
+                    <input type="button" class="buttons" id="btn3" onclick="ejecutar(this)" value="3" />
+                    <input type="button" class="buttons" id="btnmas" onclick="ejecutar(this)" value="+" />
+                </div>
+                <br>
+                <div class="numbers">
+                    <input type="button" class="buttons" id="btn4" onclick="ejecutar(this)" value="4" />
+                    <input type="button" class="buttons" id="btn5" onclick="ejecutar(this)" value="5" />
+                    <input type="button" class="buttons" id="btn6" onclick="ejecutar(this)" value="6" />
+                    <input type="button" class="buttons" id="btnmenos" onclick="ejecutar(this)" value="-" />
+                </div>
+                <br>
+                <div class="numbers">
+                    <input type="button" class="buttons" id="btn7" onclick="ejecutar(this)" value="7" />
+                    <input type="button" class="buttons" id="btn8" onclick="ejecutar(this)" value="8" />
+                    <input type="button" class="buttons" id="btn9" onclick="ejecutar(this)" value="9" />
+                    <input type="button" class="buttons" id="btnpor" onclick="ejecutar(this)" value="*" />
+                </div>
+                <br>
+                <div class="numbers">
+                    <input type="button" class="buttons" id="btnp" onclick="ejecutar(this)" value="." />
+                    <input type="button" class="buttons" id="btn0" onclick="ejecutar(this)" value="0" />
+                    <input type="button" class="buttons" id="btne" onclick="ejecutar(this)" value="=" />
+                    <input type="button" class="buttons" id="btndiv" onclick="ejecutar(this)" value="/" />
+                    <br>
+                </div>
+                <input type="button" class=clearBTN id="btnClear" onclick="ejecutar(this)" value="CLEAR" />
+
+            </section>
+
+        </form>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/calc.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<title>Curriculum Vitae de Javier</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/curriculum.png' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <img align=right src="{% static 'img/photo.jpg' %}" border="4px solid #fff" style="position:absolute; right: 120px; top: 220px; width: 296px; height:286px;">
+    <br>
+    
+    <!-- Comentario 
+hr es barra
+br saltea parrafo etc
+ul es items
+
+<PRE><b>cual q ier</b>
+orden.
+</PRE>
+    -->
+    
+    <ul class="Datos">
+        <P><li><b>Nombre:</b><SUB> Javier Coggiola</SUB><br></li></P>
+        <P><li><b>Edad:</b><SUB> 16</SUB><br></li></P>
+        <P><li><b>DNI:</b><SUB> 41252556</SUB><br></li></P>
+        <P><li><b>Estado civíl:</b><SUB> puede ser.</SUB><br></li></P>
+        <P><li><b>Nacionalidad:</b><SUB> Argentina</SUB><br></li></P>
+        <P><li><b>Mail:</b><SUB> javicj98@gmail.com</SUB><br></li></P>
+        <P><li><b>Experiencia laboral:</b><SUB> Si.</SUB><br></li></P>
+        <P><li><b>Direccion Fisica:</b></P>
+        <P><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3406.079167902769!2d-64.21758778227846!3d-31.384380527908654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298e70cbc964b%3A0x40f1bd4f00bb79d8!2sPadre+Luis+Galeano+1926%2C+C%C3%B3rdoba%2C+Argentina!5e0!3m2!1ses!2ses!4v1425646599889" width="600" height="450" frameborder="0" style="border:0"></iframe></P>
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

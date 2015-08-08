@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+
+<title>El Blog De Javier</title>
+
+{% endblock %}
+
+{% block header %}
+<img src="{% static 'img/noticias.png' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="post">
+
+        {% for post in posts %}
+        <div class="post-preview">
+            <a href="{% url 'javi_blog:vermipost' post.id %}">
+                <p>
+                    <span class="post-titulo">{{post.titulo}}</span></a>
+                    <span class="white-text-tit">Posteado por {{post.autor}}</span>
+                </p>
+            
+                <h3 class="post-subtitulo"><i class="fa fa-chevron-right"></i>
+                    {{post.resumen}}
+                </h3>
+            
+        </div>
+        <hr>
+
+        {% empty %}
+        <p id="legal"> 
+            <h5 class="white-text"> No hay Posts en este momento</h5>
+        </p>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

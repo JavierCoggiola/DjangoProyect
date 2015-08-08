@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<title>Conversor de Unidades</title>
+
+{% endblock %}
+
+
+{% block header %}
+<img src="{% static 'img/conversor.png' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+            <div class="fondoTrans">
+                <form name="form" class="form">
+                    <div class=content>
+                        <select id="cmb1">
+                            <option value="dolar">Dolares</option>
+                            <option value="argentinos">Pesos Argentinos</option>
+                            <option value="euros">Euros</option>
+                            <option value="libras">Libras</option>
+                            <option value="chilenos">Pesos Chilenos </option>
+                            <option value="uruguayos">Pesos Uruguayos </option>
+                            <option value="reales">Reales</option>
+                        </select> 
+                        <select id="cmb2">
+                            <option value="dolar">Dolares</option>
+                            <option value="argentinos">Pesos Argentinos</option>
+                            <option value="euros">Euros</option>
+                            <option value="libras">Libras</option>
+                            <option value="chilenos">Pesos Chilenos </option>
+                            <option value="uruguayos">Pesos Uruguayos </option>
+                            <option value="reales">Reales</option>
+                        </select> 
+                        <br>
+                        <input class=txb_Resultado type="text" id=txbMonto1 value="">
+                        <input type="button" class="btnConvert" id="btnConvert" onclick="ejecutar(this)" value="Convert">
+                        <input class=txb_Resultado type="text" id=txbMonto2 value="">
+                        <br>
+                        <input type="button" class="btnConvert" id="btnClear" onclick="ejecutar(this)" value="Clear">
+                    </div>
+                </form>
+            </div></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/conversor.js' %}"></script>
+{% endblock %}

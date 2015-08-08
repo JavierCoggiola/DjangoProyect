@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" href="{% static 'css/MiStyle.css' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/loguito.png' %}">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+        {% block css %}
+
+        <!-- En el base nunca va nada dentro -->
+        <!-- En otro html para agregar un css si -->
+
+        {% endblock %}
+
+    </head>
+    <body>
+
+        <div class="header">
+            {% block header %}
+            <img src="{% static 'img/jablog.png' %}">    
+            {% endblock %}
+        </div>
+        
+        <hr>
+        <br>
+
+        <ul class="navbar">
+            <li><a href="{% url 'javi_blog:home' %}">Inicio</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a href="{% url 'javi_blog:crono' %}">Cronómetro</a></li>
+            <li><a href="{% url 'javi_blog:img' %}">Imagenes Aleatorias</a></li>
+            <li><a href="{% url 'javi_blog:curr' %}">Curriculum</a></li>
+            <li><a href="{% url 'javi_blog:conver' %}">Conversor Unidades</a></li>
+            <li><a href="{% url 'javi_blog:calcu' %}">Calculadora</a></li>
+            <li><a href="{% url 'javi_blog:cuest' %}">Cuestionario</a></li>
+            <li><a href="{% url 'javi_blog:contact' %}">Contacto</a></li>
+        </ul>
+
+        <!-- Al Medio -->
+        <div class="fondoTrans">
+            <div class="container">
+                {% block content %}
+                <!-- En el base nunca va nada dentro -->
+                {% endblock %}
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <br>
+            <hr>
+            <div class="social">
+                <a href="http://facebook.com/javi.coggiola.5" class="link facebook" target="_parent"><span class="fa fa-facebook-square fa-0.1g"></span></a>
+                <a href="https://twitter.com/javiCoggiolaOK" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a>
+                <a href="https://plus.google.com/u/0/100462307275684601665" class="link google-plus" target="_parent"><span class="fa fa-google-plus-square">        </span></a>
+            </div>
+
+            <div class="footer-copyright">
+                <div id="footer">
+                    <div class="container2" align="center">
+                        <p id="legal"> 
+                            <a class="white-text" href="http://facebook.com/javi.coggiola.5" rel="nofollow">&copy; Javier Coggiola</a> 
+                            &nbsp;&nbsp;&bull;&nbsp;&nbsp;Se utilizó <a class="white-text" href="http://www.w3schools.com/">Html - Css - MaterializeCss - jQuery - Django - Ajax</a> 
+                        </p>
+                    </div>    
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+
+        <!-- materialize -->
+        <script src="{% static 'js/materialize.min.js' %}"></script>
+
+
+
+        {% block scripts %}
+        <!-- En el base nunca va nada dentro -->
+        {% endblock %}
+
+    </body>
+
+</html>
